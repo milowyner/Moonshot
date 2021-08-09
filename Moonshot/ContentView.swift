@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var astronauts: [Astronaut] = Bundle.main.decode("astronauts")
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(astronauts) {
+            Text($0.name)
+        }
     }
 }
 
