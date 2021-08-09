@@ -8,14 +8,14 @@
 import Foundation
 
 extension Bundle {
-    func decode<DataType: Decodable>(_ file: String) -> [DataType] {
+    func decode<T: Decodable>(_ file: String) -> T {
         guard let url = url(forResource: file, withExtension: "json") else {
             fatalError("Failed to locate \(file) in bundle.")
         }
         guard let data = try? Data(contentsOf: url) else {
             fatalError("Failed to load \(file) from bundle.")
         }
-        guard let loaded = try? JSONDecoder().decode([DataType].self, from: data) else {
+        guard let loaded = try? JSONDecoder().decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle.")
         }
         
