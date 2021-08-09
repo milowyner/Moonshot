@@ -12,8 +12,22 @@ struct ContentView: View {
     @State private var missions: [Mission] = Bundle.main.decode("missions")
     
     var body: some View {
-        List(missions) {
-            Text($0.description)
+        NavigationView {
+            List(missions) { mission in
+                NavigationLink(destination: Text("Detail view")) {
+                    Image(mission.image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44, height: 44)
+                    
+                    VStack(alignment: .leading) {
+                        Text(mission.displayName)
+                            .font(.headline)
+                        Text(mission.formattedLaunchDate)
+                    }
+                }
+            }
+            .navigationBarTitle("Moonshot")
         }
     }
 }
