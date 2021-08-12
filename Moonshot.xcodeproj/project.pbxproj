@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0520620726C5932D008F1BC4 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520620626C5932D008F1BC4 /* AstronautView.swift */; };
 		05216FE126C0D18E00619350 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = 05216FDF26C0D18E00619350 /* missions.json */; };
 		05216FE226C0D18E00619350 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = 05216FE026C0D18E00619350 /* astronauts.json */; };
 		05216FE426C0D26000619350 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05216FE326C0D26000619350 /* Astronaut.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0520620626C5932D008F1BC4 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		05216FDF26C0D18E00619350 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 		05216FE026C0D18E00619350 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
 		05216FE326C0D26000619350 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				053CD47326BF68A6007DA46C /* SceneDelegate.swift */,
 				053CD47526BF68A6007DA46C /* ContentView.swift */,
 				05DBDB6126C1E2C600C94F72 /* MissionView.swift */,
+				0520620626C5932D008F1BC4 /* AstronautView.swift */,
 				05216FE326C0D26000619350 /* Astronaut.swift */,
 				05216FE926C1AEE100619350 /* Mission.swift */,
 				05216FE526C0D9DB00619350 /* Bundle-Decodable.swift */,
@@ -167,6 +170,7 @@
 			files = (
 				05DBDB6226C1E2C600C94F72 /* MissionView.swift in Sources */,
 				05216FEA26C1AEE100619350 /* Mission.swift in Sources */,
+				0520620726C5932D008F1BC4 /* AstronautView.swift in Sources */,
 				053CD47226BF68A6007DA46C /* AppDelegate.swift in Sources */,
 				053CD47426BF68A6007DA46C /* SceneDelegate.swift in Sources */,
 				05216FE626C0D9DB00619350 /* Bundle-Decodable.swift in Sources */,
