@@ -33,7 +33,7 @@ struct Mission: Codable, Identifiable {
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
             return formatter.string(from: launchDate)
         } else {
-            return "N/A"
+            return "Never launched"
         }
     }
 }

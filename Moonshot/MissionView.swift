@@ -38,6 +38,10 @@ struct MissionView: View {
                         .frame(width: geometry.size.width * 0.7)
                         .padding(.top)
                     
+                    Text(mission.formattedLaunchDate)
+                        .font(.headline)
+                        .padding(.top)
+                    
                     Text(mission.description)
                         .padding()
                     
@@ -76,7 +80,7 @@ struct MissionView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            MissionView(mission: missions[1], astronauts: astronauts)
+            MissionView(mission: missions[0], astronauts: astronauts)
         }
     }
 }
