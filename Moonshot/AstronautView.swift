@@ -27,7 +27,7 @@ struct AstronautView: View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    Image(astronaut.id)
+                    Image(decorative: astronaut.id)
                         .resizable()
                         .scaledToFit()
                         .frame(width: geometry.size.width)
@@ -38,7 +38,7 @@ struct AstronautView: View {
                     
                     ForEach(missions) { mission in
                         HStack {
-                            Image(mission.image)
+                            Image(decorative: mission.image)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 44, height: 44)
@@ -53,6 +53,7 @@ struct AstronautView: View {
                             Spacer()
                         }
                         .padding(.horizontal)
+                        .accessibilityElement(children: .combine)
                     }
                 }
             }
