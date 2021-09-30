@@ -27,16 +27,31 @@ struct MissionView: View {
             return CrewMember(role: member.role, astronaut: match)
         }
     }
-        
+    
+    func size(outer: GeometryProxy, inner: GeometryProxy? = nil) -> CGFloat {
+        var scale = 0.7
+        if let inner = inner {
+            scale *= inner.frame(in: .global).minY / 300.0
+            if scale < 0 { scale = 0.0 }
+            scale += 0.7 * 0.7
+        }
+        return outer.size.width * scale
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    Image(decorative: mission.image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: geometry.size.width * 0.7)
-                        .padding(.top)
+                    GeometryReader { imageGeo in
+                        Image(decorative: mission.image)
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.top)
+                            .frame(size: size(outer: geometry, inner: imageGeo))
+                            .position(x: imageGeo.size.width / 2, y: imageGeo.size.height - size(outer: geometry, inner: imageGeo) / 2)
+                    }
+                    .frame(size: size(outer: geometry))
+                    
                     
                     Text(mission.formattedLaunchDate)
                         .font(.headline)
@@ -71,6 +86,12 @@ struct MissionView: View {
             }
             .navigationBarTitle(mission.displayName, displayMode: .inline)
         }
+    }
+}
+
+extension View {
+    func frame(size: CGFloat) -> some View {
+        self.frame(width: size, height: size)
     }
 }
 
